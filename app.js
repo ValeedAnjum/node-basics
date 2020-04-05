@@ -1,9 +1,15 @@
-const http = require("http");
-const path =  require("path");
+const express = require("express");
+const app = express();
+const port = 5000;
 
-http.createServer((req,res) => {
-    res.write("Hellow Node");
-    res.end();
-}).listen(3000)
+app.get('/',(req,res) => {
+    res.send("Hello from home");
+})
 
-console.log('server is running')
+app.get('/about',(req,res) => {
+    res.send("Hello from about");
+})
+
+app.listen(port,() => {
+    console.log("Server is running + " , port);
+})
