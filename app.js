@@ -1,16 +1,11 @@
 const express = require("express");
+const path = require('path');
+
 const app = express();
 const port = 5000;
 
-//
-app.use(function(req,res,next) {
-    res.setHeader('Access-Control-Allow-Origin','*');
-    res.setHeader('Access-Control-Allow-Methods','GET');
-    next();
-})
-//
 app.get('/',(req,res) => {
-    res.send("Hello from home");
+    res.sendFile(path.join(__dirname + '/index.html'));
 })
 
 app.get('/about',(req,res) => {
