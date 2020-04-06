@@ -8,6 +8,9 @@ app.use(express.static('public'));
 //importing routes
 require('./routes')(app);
 
+//view engine
+app.set('view engine','ejs');
+
 app.listen(port,() => {
     console.log("Server is running + " , port);
 })
