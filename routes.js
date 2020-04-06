@@ -1,7 +1,7 @@
 
 module.exports = (app) => {
     app.get('/',(req,res) => {
-        res.render('home');
+        res.render('home',{data:{name:'Valeed Anjum'}});
     })
     
     app.get('/about',(req,res) => {
